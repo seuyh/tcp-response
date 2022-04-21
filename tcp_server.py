@@ -15,11 +15,11 @@ while not close:
     # это нужно так как получение данных с сервера обращает символ переноса строки \n в строку
     if client_data[-2:] == "\\n":
         client_data = client_data[:-2] + '\n'
-    print(f'client_data: {client_data}')
     if match('\d{4}\s\w\d\s\d{2}:\d{2}:\d{2}.\d{3}', client_data[:-1]):
         with open('log.txt', 'a') as f:
             f.write(client_data)
         if client_data[-3:-1] == '00':
+            print(f'client_data: {client_data}')
             response = \
                 f'спортсмен, нагрудный номер {client_data[:4]} прошёл отсечку {client_data[5:7]} в {client_data[8:17]}'
             print(response)
