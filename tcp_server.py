@@ -21,7 +21,7 @@ while not close:
         if client_data[-3:-1] == '00':
             print(f'client_data: {client_data}')
             response = \
-                f'спортсмен, нагрудный номер {client_data[:4]} прошёл отсечку {client_data[5:7]} в {client_data[8:17]}'
+                f'спортсмен, нагрудный номер {client_data[:4]} прошёл отсечку {client_data[5:7]} в {client_data[8:18]}'
             print(response)
             client.send(bytes(response, 'utf-8'))
     elif client_data != 'quit':
